@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>American Landmarks</title>
+		<script>
+			
+			
+			
+			function preventBehavior(e)
+			{
+				e.preventDefault();
+			};
+			
+			function funShowItem(inc_element_id){
+				document.getElementById(inc_element_id).style.visibility = "visible";
+				document.getElementById(inc_element_id).style.display = "block";
+			}
+			
+			function funHideItem(inc_element_id){
+				document.getElementById(inc_element_id).style.visibility = "hidden";
+				document.getElementById(inc_element_id).style.display = "none";
+			}
+			
+			
+			
+			
+			function funHome(){
+				window.location.href = "index.html";
+			}
+			
+			function funChange(){
+				var elmSelect = document.getElementById("select_option");
+				var strValue = elmSelect.options[elmSelect.selectedIndex].value;
+				strValue = "div_option_" + strValue;
+				
+				for (var i=0; i<elmSelect.length; i++){
+					funHideItem("div_option_" + elmSelect.options[i].value);
+				}
+				
+				
+				
+				funShowItem(strValue);
+			}
+			
+			function funStart(){
+				document.getElementById("div_home_button").addEventListener('touchend', function(){funHome();}, false);
+				document.getElementById("select_option").addEventListener('change', function(){funChange();}, false);
+			}
+			
+			
+			
+			
+			
+			</script>
+		<style>
+			body, div, img{
+				margin: 0px;
+				padding: 0px;
+				
+			}
+			#div_container{
+				background: url('img/background_learn.png');
+				background-size: 100%;
+				width: 1024px;
+				height: 748px;
+			}
+			
+			
+			#div_home_button{
+				background: url('img/home.png');
+				background-size: 100%;
+				width: 210px;
+				height: 118px;
+				position: absolute;
+				top: 630px;
+				left: 702px;
+			}
+			#select_option{
+				width: 480px;
+				height: 60px;
+				position: absolute;
+				top: 648px;
+				left: 120px;
+				padding: 20px;
+				text-align: center;
+				font-size: 40px;
+				font-family: Verdana;
+				color: #000;
+			}
+			.div_options{
+				visibility: hidden;
+				display: none;
+				position: absolute;
+				left: 20px;
+				top: 70px;
+				width: 756px;
+				height: 340px;
+			}
+			
+			#div_options_background {
+				position: absolute;
+				width: 800px;
+				height: 480px;
+				background: #324158;
+				border-radius: 50% / 10%;
+				color: white;
+				text-align: center;
+				text-indent: .1em;
+				top: 62px;
+				left: 112px;
+			}
+			#div_options_background:before {
+				content: '';
+				position: absolute;
+				top: 10%;
+				bottom: 10%;
+				right: -5%;
+				left: -5%;
+				background: inherit;
+				border-radius: 5% / 50%;
+			}
+			#div_option_alamo{
+				visibility: visible;
+				display: block;
+			}
+			.img_option_image {
+				position: absolute;
+				width: 360px;
+				border: 5px solid #FFF;
+				top: 0px;
+				left: 0px;
+			}
+			
+			.div_option_title {
+				position: absolute;
+				width: 336px;
+				color: #FFF;
+				padding: 10px;
+				top: -16px;
+				left: 400px;
+				text-align: left;
+				font-size: 24px;
+				font-family: Verdana;
+			}
+			
+			.div_option_description {
+				position: absolute;
+				width: 336px;
+				color: #FFF;
+				padding: 10px;
+				top: 50px;
+				left: 400px;
+				text-align: left;
+				font-size: 14px;
+				font-family: Verdana;
+			}
+			.div_option_credit {
+				color: #FFF;
+				margin: 0px 0px 0px 220px;
+			}
+		</style>
+		
+    </head>
+    <body>
+		<div id="div_container">
+			<div id="div_home_button"></div>
+			<select id="select_option">
+				<option value="alamo">Alamo</option>
+				<option value="fortsumter">Fort Sumter</option>
+				<option value="freedomtrail">Freedom Trail</option>
+				<option value="gatewayarch">Gateway Arch</option>
+				<option value="goldengatebridge">Golden Gate Bridge</option>
+				<option value="hooverdam">Hoover Dam</option>
+				<option value="independencehall">Independence Hall</option>
+				<option value="mountrushmore">Mount Rushmore</option>
+				<option value="nationalmall">National Mall</option>
+				<option value="statueliberty">Statue of Liberty</option>
+			</select>
+			<div id="div_options_background">
+				<div class="div_options" id="div_option_alamo">
+					<img class="img_option_image" src="img/options/alamo.jpg"/>
+					<div class="div_option_title">
+						Alamo
+					</div>
+					<div class="div_option_description">
+						The Battle of the Alamo (February 23 – March 6, 1836) was a pivotal event in the Texas Revolution. Following a 13-day siege, Mexican troops under President General Antonio López de Santa Anna launched an assault on the Alamo Mission near San Antonio de Béxar (modern-day San Antonio, Texas, USA). All but two of the Texian defenders were killed.<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_fortsumter">
+					<img class="img_option_image" src="img/options/sumter.jpg"/>
+					<div class="div_option_title">
+						Fort Sumter
+					</div>
+					<div class="div_option_description">
+						Fort Sumter is a Third System masonry sea fort located in Charleston Harbor, South Carolina. The fort is best known as the site upon which the shots initiating the American Civil War were fired, at the Battle of Fort Sumter.<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_freedomtrail">
+					<img class="img_option_image" src="img/options/freedomtrail.jpg"/>
+					<div class="div_option_title">
+						Freedom Trail
+					</div>
+					<div class="div_option_description">
+						The Freedom Trail is a red (mostly brick) path through downtown Boston, Massachusetts, that leads to 16 significant historic sites. It is a 2.5-mile walk from Boston Common to USS Constitution in Charlestown. Simple ground markers explaining events, graveyards, notable churches and other buildings, and a historic naval frigate are stops along the way. <br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_gatewayarch">
+					<img class="img_option_image" src="img/options/gatewayarch.jpg"/>
+					<div class="div_option_title">
+						Gateway Arch
+					</div>
+					<div class="div_option_description">
+						The Gateway Arch, or Gateway to the West, is an arch that is the centerpiece of the Jefferson National Expansion Memorial in St. Louis, Missouri. It was built as a monument to the westward expansion of the United States.<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_goldengatebridge">
+					<img class="img_option_image" src="img/options/goldengatebridge.jpg"/>
+					<div class="div_option_title">
+						Golden Gate Bridge
+					</div>
+					<div class="div_option_description">
+						The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the opening of the San Francisco Bay into the Pacific Ocean. As part of both U.S. Route 101 and California State Route 1, the structure links the city of San Francisco, on the northern tip of the San Francisco Peninsula, to Marin County.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_hooverdam">
+					<img class="img_option_image" src="img/options/hooverdam.jpg"/>
+					<div class="div_option_title">
+						Hoover Dam
+					</div>
+					<div class="div_option_description">
+						Hoover Dam, once known as Boulder Dam, is a concrete arch-gravity dam in the Black Canyon of the Colorado River, on the border between the US states of Arizona and Nevada. It was constructed between 1931 and 1936 during the Great Depression and was dedicated on September 30, 1935, by President Franklin D. Roosevelt. Its construction was the result of a massive effort involving thousands of workers, and cost over one hundred lives. The dam was controversially named after President Herbert Hoover.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_independencehall">
+					<img class="img_option_image" src="img/options/independencehall.jpg"/>
+					<div class="div_option_title">
+						Independence Hall
+					</div>
+					<div class="div_option_description">
+						Independence Hall is the centerpiece of Independence National Historical Park in Philadelphia, Pennsylvania, United States, on Chestnut Street between 5th and 6th Streets. It is known primarily as the location where both the Declaration of Independence and the United States Constitution were debated and adopted.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_mountrushmore">
+					<img class="img_option_image" src="img/options/mountrushmore.jpg"/>
+					<div class="div_option_title">
+						Mount Rushmore
+					</div>
+					<div class="div_option_description">
+						The Mount Rushmore National Memorial is a sculpture carved into the granite face of Mount Rushmore near Keystone, South Dakota, in the United States. Sculpted by Danish-American Gutzon Borglum and his son, Lincoln Borglum, Mount Rushmore features 60-foot (18 m) sculptures of the heads of four United States presidents: George Washington, Thomas Jefferson, Theodore Roosevelt and Abraham Lincoln.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_nationalmall">
+					<img class="img_option_image" src="img/options/nationalmall.jpg"/>
+					<div class="div_option_title">
+						National Mall
+					</div>
+					<div class="div_option_description">
+						The National Mall is an open-area national park in downtown Washington, D.C., the capital of the United States. The term National Mall commonly includes areas that are officially part of West Potomac Park and Constitution Gardens to the west, and often is taken to refer to the entire area between the Lincoln Memorial and the United States Capitol, with the Washington Monument providing a division slightly west of the center.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+				<div class="div_options" id="div_option_statueliberty">
+					<img class="img_option_image" src="img/options/statueofliberty.jpg"/>
+					<div class="div_option_title">
+						Statue of Liberty
+					</div>
+					<div class="div_option_description">
+						The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor, designed by Frédéric Bartholdi and dedicated on October 28, 1886. The statue, a gift to the United States from the people of France, is of a robed female figure representing Libertas, the Roman goddess of freedom, who bears a torch and a tabula ansata upon which is inscribed the date of the American Declaration of Independence, July 4, 1776. A broken chain lies at her feet. The statue is an icon of freedom and of the United States: a welcoming signal to immigrants arriving from abroad.
+						<br/>
+						<div class="div_option_credit">- Wikipedia</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript" src="cordova-2.2.0rc1.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+			</script>
+    </body>
+</html>
